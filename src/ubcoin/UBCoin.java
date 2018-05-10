@@ -174,10 +174,7 @@ public class UBCoin implements Runnable {
                  
 
 				System.out.println(responseLine);// +" gvar="+glovalVar.gvar+" mindex="+glovalVar.mindex);
-				if(responseLine.contains("miner3"))
-				{
-					System.out.println("Block received from miner3 contains invalid solution");
-				}
+				
 				if(responseLine.contains("name.Hash"))
 				{
 					String[] split = responseLine.split("~~");
