@@ -71,7 +71,7 @@ public class UBCoin implements Runnable {
 				Scanner sc = new Scanner(System.in);
 				clientName = sc.nextLine(); 
 				send(clientName);
-				//send("sujay");
+				
 				while(true)
 				{
 					String input = sc.nextLine();
@@ -133,41 +133,7 @@ public class UBCoin implements Runnable {
 				System.err.println("IOException:  " + e);
 			}
 		}
-		/*
-		 * while(true) { i++; Transaction t = (Transaction)readWrite.readTx(i);
-		 * if(t!=null) System.out.println(t.output.val); // else // i--; }
-		 */
-
-		// Mine mine = new Mine("Thread-1");
-		// mine.start();
-
-		// threadClient client = new threadClient("Thread-2");
-		// client.start();
-
-		/*
-		 * while(true) { if(glovalVar.gvar!=null) {
-		 * System.out.println("Value in main thread is"+glovalVar.gvar);
-		 * 
-		 * } }
-		 */
-		/*
-		 * ArrayList<Block> blocks= Blockchain.readBlocks(); int temp=0;
-		 * for(Block b:blocks) { System.out.println();
-		 * System.out.println("Block Number="+temp); temp++; for(Transaction
-		 * t:b.tx) { //System.out.println("Next Transaction"); for(int
-		 * j=0;j<t.input.length;j++)
-		 * System.out.println("Sender="+t.input[j].senderKey
-		 * .hashCode());//+" Receiver="
-		 * +t.output.receiverKey.hashCode()+" Extra Data="+t.output.extraData);
-		 * 
-		 * // System.out.println(t); }
-		 * 
-		 * }
-		 * 
-		 * 
-		 * 
-		 * // byte [] data = blocks.get(1)..toByteArray();
-		 */
+		
 
 	}
 
@@ -205,10 +171,7 @@ public class UBCoin implements Runnable {
 	
 		try {
 			while ((responseLine = is.readLine()) != null) {
-                 //if(responseLine.contains(arg0))
-				// #Receive transaction in string and write to file
-				// #Receive block in string and write to file is solution is
-				// valid
+                 
 
 				System.out.println(responseLine);// +" gvar="+glovalVar.gvar+" mindex="+glovalVar.mindex);
 				if(responseLine.contains("miner3"))
@@ -257,11 +220,7 @@ public class UBCoin implements Runnable {
 							ReadWrite.writeBlk(b, Config.path+"/blockchain/block"+(listOfFilesblk.length+1)+".txt");
 						}
 					
-						//String[] separated = responseLine.split("!#@");
-						//String[] blkname = separated[1].split("blk");
-						//StringBuilder sb = new StringBuilder(blkname[2]);
-						//System.out.println("File nmae is"+sb);
-						//path = Config.path+"/blkrecv/blk" + separated[0]+sb + "txt";
+						
 						path = Config.path+"/blkrecv/blk" + blkindex + "txt";
 					}
 				}
@@ -276,11 +235,7 @@ public class UBCoin implements Runnable {
 					if(testWrite !="")
 					Writer.writeFile(testWrite, path, type);
 					testWrite = "";
-					/*
-					 * Transaction tx = readWrite.readTx(path); if (tx != null)
-					 * System.out.println("Finally the valuse is:" +
-					 * tx.output.val); testWrite = "";
-					 */
+					
 				}
 
 				if(responseLine.contains("$mine$"))
@@ -293,15 +248,8 @@ public class UBCoin implements Runnable {
 				if (responseLine.indexOf("*** Bye") != -1)
 					break;
 			
-			//write logic for time here
-				 
-				//counter.countPrimes(1000000);
-			    
-			   
-				
-			    
-				
-			////
+			
+			
 			}
 			closed = true;
 		} catch (IOException e) {
